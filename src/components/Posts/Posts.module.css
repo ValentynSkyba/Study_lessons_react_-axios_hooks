@@ -1,4 +1,4 @@
-.list{
+.list {
   padding: 0;
   margin: 20px auto;
   max-width: 90%;
@@ -8,12 +8,20 @@
   gap: 20px;
 }
 
-.card{
+.card {
   list-style: none;
   box-shadow: 2px 2px 5px 4px gray;
   padding: 10px;
-  div{
+  div {
     display: flex;
     gap: 10px;
+  }
+}
+.tags {
+  padding: 10px;
+  list-style: none;
+  li {
+    font-weight: bold;
+    color: blue;
   }
 }

@@ -1,6 +1,7 @@
-import s from './Posts.module.css'
-const Error = () => {
-	return <div>Error</div>
-}
+import s from "./Posts.module.css";
 
-export default Error
+const Error = () => {
+  return <div>error</div>;
+};
+
+export default Error;

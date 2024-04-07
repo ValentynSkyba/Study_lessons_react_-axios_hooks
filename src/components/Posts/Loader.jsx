@@ -1,7 +1,6 @@
-import s from './Posts.module.css'
-
+import s from "./Posts.module.css";
 const Loader = () => {
-	return <div>Loader</div>
-}
+  return <div>loader</div>;
+};
 
-export default Loader
+export default Loader;

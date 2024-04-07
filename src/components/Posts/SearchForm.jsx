@@ -1,7 +1,6 @@
-import s from './Posts.module.css'
-
+import s from "./Posts.module.css";
 const SearchForm = () => {
-	return <div>SearchForm</div>
-}
+  return <div>searchform</div>;
+};
 
-export default SearchForm
+export default SearchForm;

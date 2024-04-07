@@ -1,20 +1,14 @@
-import axios from 'axios'
+import Axios from "axios";
 
-axios.defaults.baseURL = 'https://dummyjson.com/'
+Axios.defaults.baseURL = "https://dummyjson.com/";
 
-// https://dummyjson.com/posts
-export const fetchPosts = async args => {
-	const response = await axios.get(`posts`, {
-		params: {
-			limit: 6,
-			...args,
-		},
-	})
-	return response.data
-}
-
-// https://dummyjson.com/products
-export const fetchProducts = async (id, limit) => {
-	const response = await axios.get(`products?limit=${limit}&id=${id}`)
-	return response.data
-}
+export const fetchPosts = async (args) => {
+  const response = await Axios.get(`posts`, {
+    params: {
+      limit: 6,
+      ...args,
+    },
+  });
+  console.log(response);
+  return response.data;
+};

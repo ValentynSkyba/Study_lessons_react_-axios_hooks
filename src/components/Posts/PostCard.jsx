@@ -1,18 +1,18 @@
-import { cutText } from '../../helpers/cutText'
-import s from './Posts.module.css'
-
+import { cutText } from "../../helpers/cutText";
+import s from "./Posts.module.css";
 const PostCard = ({ post }) => {
-	const { title = 'Default title', body = 'Default body' } = post
-	return (
-		<li className={s.card}>
-			<h2>{title}</h2>
-			<p>{cutText(body)}</p>
-			<div>
-				<button className='btn border'>Read more</button>
-				<button className='btn border'>Add to fav</button>
-			</div>
-		</li>
-	)
-}
+  const { title = "Default title", body = "Default body" } = post;
 
-export default PostCard
+  return (
+    <li className={s.card}>
+      <h2>{title}</h2>
+      <p>{cutText(body)}</p>
+      <div>
+        <button>Read more</button>
+        <button>Add to favorites</button>
+      </div>
+    </li>
+  );
+};
+
+export default PostCard;
