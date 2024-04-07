@@ -1,20 +1,38 @@
-import BookStort from "./components/BookStore/BookStore";
-import RegisterFormFormik from "./components/Forms/RegisterFormFormik";
+import { useEffect, useState } from 'react'
+import PostList from './components/Posts/PostList'
+import SearchForm from './components/Posts/SearchForm'
+import { fetchPosts } from './services/api'
 
 const App = () => {
-  const handleRegister = (data) => {
-    console.log("Fetch register....");
-    setTimeout(() => {
-      console.log(data);
-      console.log("Register is done!🔥");
-    }, 2000);
-  };
-  return (
-    <div className="flexCenter formWrapper">
-      {/* <RegisterFormFormik onRegister={handleRegister} /> */}
-      <BookStort />
-    </div>
-  );
-};
+	const [items, setItems] = useState([])
+	const [skip, setSkip] = useState(0)
+	const [limit] = useState(3)
 
-export default App;
+	useEffect(() => {
+		const getData = async () => {
+			try {
+				const { posts, total } = await fetchPosts({ skip, limit })
+				setItems(prev => [...prev, ...posts])
+			} catch (error) {
+				console.log(error.message)
+			}
+		}
+
+		getData()
+	}, [skip, limit])
+
+	const handleLoadMore = () => {
+		setSkip(prev => prev + limit)
+	}
+	return (
+		<>
+			<SearchForm />
+			<PostList items={items} />
+			<button onClick={handleLoadMore} className='btn border'>
+				Load more
+			</button>
+		</>
+	)
+}
+
+export default App
