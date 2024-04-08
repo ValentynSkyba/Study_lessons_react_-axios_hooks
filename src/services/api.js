@@ -12,3 +12,15 @@ export const fetchPosts = async (args) => {
   console.log(response);
   return response.data;
 };
+
+//fetch('https://dummyjson.com/posts/search?q=love')
+export const fetchPostbyQuery = async (args) => {
+  const response = await Axios.get(`post/search`, {
+    params: {
+      limit: 6,
+      ...args,
+    },
+  });
+  console.log(response);
+  return response.data;
+};

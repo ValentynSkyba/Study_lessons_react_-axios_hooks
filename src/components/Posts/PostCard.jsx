@@ -1,6 +1,6 @@
 import { cutText } from "../../helpers/cutText";
 import s from "./Posts.module.css";
-const PostCard = ({ post }) => {
+const PostCard = ({ post, showPost }) => {
   const { title = "Default title", body = "Default body" } = post;
 
   return (
@@ -8,7 +8,7 @@ const PostCard = ({ post }) => {
       <h2>{title}</h2>
       <p>{cutText(body)}</p>
       <div>
-        <button>Read more</button>
+        <button onClick={() => showPost(post)}>Read more</button>
         <button>Add to favorites</button>
       </div>
     </li>
